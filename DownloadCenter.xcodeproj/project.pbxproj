@@ -14,6 +14,16 @@
 		5C4AC32D20FDD7AA0021F350 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AC32B20FDD7AA0021F350 /* LaunchScreen.storyboard */; };
 		5C4AC33820FDD7AA0021F350 /* DownloadCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AC33720FDD7AA0021F350 /* DownloadCenterTests.swift */; };
 		5C4AC34320FDD7AA0021F350 /* DownloadCenterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AC34220FDD7AA0021F350 /* DownloadCenterUITests.swift */; };
+		5C4AC35420FDD8040021F350 /* HYDownloadVideoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AC35320FDD8040021F350 /* HYDownloadVideoRecord.swift */; };
+		5C4AC35620FDD80D0021F350 /* HYVideoDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AC35520FDD80D0021F350 /* HYVideoDownloadManager.swift */; };
+		5C4AC35820FDD81A0021F350 /* HYVideoDownloadDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AC35720FDD81A0021F350 /* HYVideoDownloadDataCenter.swift */; };
+		5C4AC35A20FDDC890021F350 /* HYVideoDownloadNotificationAndEnumDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AC35920FDDC890021F350 /* HYVideoDownloadNotificationAndEnumDefine.swift */; };
+		5C9D14CC2106C54B007A46DC /* FMDBDatabasePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D14C72106C54A007A46DC /* FMDBDatabasePool.swift */; };
+		5C9D14CD2106C54B007A46DC /* SQLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D14C82106C54A007A46DC /* SQLGenerator.swift */; };
+		5C9D14CE2106C54B007A46DC /* PersostanceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D14CA2106C54B007A46DC /* PersostanceProtocols.swift */; };
+		5C9D14CF2106C54B007A46DC /* PersistanceTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D14CB2106C54B007A46DC /* PersistanceTable.swift */; };
+		5C9D14D22106C686007A46DC /* HYVideoTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D14D12106C686007A46DC /* HYVideoTable.swift */; };
+		7DF1AC64F59F206F7B89D6F2 /* Pods_DownloadCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC8B152AB1097F3C8CCBD3E /* Pods_DownloadCenter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AC8B152AB1097F3C8CCBD3E /* Pods_DownloadCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownloadCenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4AC31F20FDD7A80021F350 /* DownloadCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownloadCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4AC32220FDD7A80021F350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C4AC32420FDD7A80021F350 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,17 @@
 		5C4AC33E20FDD7AA0021F350 /* DownloadCenterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownloadCenterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4AC34220FDD7AA0021F350 /* DownloadCenterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCenterUITests.swift; sourceTree = "<group>"; };
 		5C4AC34420FDD7AA0021F350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C4AC35320FDD8040021F350 /* HYDownloadVideoRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYDownloadVideoRecord.swift; sourceTree = "<group>"; };
+		5C4AC35520FDD80D0021F350 /* HYVideoDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYVideoDownloadManager.swift; sourceTree = "<group>"; };
+		5C4AC35720FDD81A0021F350 /* HYVideoDownloadDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYVideoDownloadDataCenter.swift; sourceTree = "<group>"; };
+		5C4AC35920FDDC890021F350 /* HYVideoDownloadNotificationAndEnumDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYVideoDownloadNotificationAndEnumDefine.swift; sourceTree = "<group>"; };
+		5C9D14C72106C54A007A46DC /* FMDBDatabasePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDBDatabasePool.swift; sourceTree = "<group>"; };
+		5C9D14C82106C54A007A46DC /* SQLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLGenerator.swift; sourceTree = "<group>"; };
+		5C9D14CA2106C54B007A46DC /* PersostanceProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersostanceProtocols.swift; sourceTree = "<group>"; };
+		5C9D14CB2106C54B007A46DC /* PersistanceTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceTable.swift; sourceTree = "<group>"; };
+		5C9D14D12106C686007A46DC /* HYVideoTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYVideoTable.swift; sourceTree = "<group>"; };
+		9D118E47A60DA537088118A2 /* Pods-DownloadCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownloadCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-DownloadCenter/Pods-DownloadCenter.release.xcconfig"; sourceTree = "<group>"; };
+		9D74DABECA205DAA2D16A8AA /* Pods-DownloadCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownloadCenter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DownloadCenter/Pods-DownloadCenter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF1AC64F59F206F7B89D6F2 /* Pods_DownloadCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +97,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09873DF5880C724B92460A85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AC8B152AB1097F3C8CCBD3E /* Pods_DownloadCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F9C8067186A19437B262DEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D74DABECA205DAA2D16A8AA /* Pods-DownloadCenter.debug.xcconfig */,
+				9D118E47A60DA537088118A2 /* Pods-DownloadCenter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5C4AC31620FDD7A80021F350 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +121,8 @@
 				5C4AC33620FDD7AA0021F350 /* DownloadCenterTests */,
 				5C4AC34120FDD7AA0021F350 /* DownloadCenterUITests */,
 				5C4AC32020FDD7A80021F350 /* Products */,
+				3F9C8067186A19437B262DEE /* Pods */,
+				09873DF5880C724B92460A85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +139,10 @@
 		5C4AC32120FDD7A80021F350 /* DownloadCenter */ = {
 			isa = PBXGroup;
 			children = (
+				5C9D14C42106C503007A46DC /* DataBase */,
+				5C4AC35220FDD7DF0021F350 /* DownloadManager */,
+				5C4AC35020FDD7DF0021F350 /* VideoDownloadDataCenter */,
+				5C4AC35120FDD7DF0021F350 /* VideoRecord */,
 				5C4AC32220FDD7A80021F350 /* AppDelegate.swift */,
 				5C4AC32420FDD7A80021F350 /* ViewController.swift */,
 				5C4AC32620FDD7A80021F350 /* Main.storyboard */,
@@ -125,6 +171,67 @@
 			path = DownloadCenterUITests;
 			sourceTree = "<group>";
 		};
+		5C4AC35020FDD7DF0021F350 /* VideoDownloadDataCenter */ = {
+			isa = PBXGroup;
+			children = (
+				5C4AC35720FDD81A0021F350 /* HYVideoDownloadDataCenter.swift */,
+				5C9D14D02106C633007A46DC /* VideoTable */,
+			);
+			path = VideoDownloadDataCenter;
+			sourceTree = SOURCE_ROOT;
+		};
+		5C4AC35120FDD7DF0021F350 /* VideoRecord */ = {
+			isa = PBXGroup;
+			children = (
+				5C4AC35320FDD8040021F350 /* HYDownloadVideoRecord.swift */,
+			);
+			path = VideoRecord;
+			sourceTree = SOURCE_ROOT;
+		};
+		5C4AC35220FDD7DF0021F350 /* DownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				5C4AC35520FDD80D0021F350 /* HYVideoDownloadManager.swift */,
+				5C4AC35920FDDC890021F350 /* HYVideoDownloadNotificationAndEnumDefine.swift */,
+			);
+			path = DownloadManager;
+			sourceTree = SOURCE_ROOT;
+		};
+		5C9D14C42106C503007A46DC /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				5C9D14C52106C54A007A46DC /* DataPool */,
+				5C9D14C92106C54B007A46DC /* PersistanceTable */,
+			);
+			path = DataBase;
+			sourceTree = SOURCE_ROOT;
+		};
+		5C9D14C52106C54A007A46DC /* DataPool */ = {
+			isa = PBXGroup;
+			children = (
+				5C9D14C72106C54A007A46DC /* FMDBDatabasePool.swift */,
+				5C9D14C82106C54A007A46DC /* SQLGenerator.swift */,
+			);
+			path = DataPool;
+			sourceTree = "<group>";
+		};
+		5C9D14C92106C54B007A46DC /* PersistanceTable */ = {
+			isa = PBXGroup;
+			children = (
+				5C9D14CA2106C54B007A46DC /* PersostanceProtocols.swift */,
+				5C9D14CB2106C54B007A46DC /* PersistanceTable.swift */,
+			);
+			path = PersistanceTable;
+			sourceTree = "<group>";
+		};
+		5C9D14D02106C633007A46DC /* VideoTable */ = {
+			isa = PBXGroup;
+			children = (
+				5C9D14D12106C686007A46DC /* HYVideoTable.swift */,
+			);
+			path = VideoTable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C4AC34720FDD7AA0021F350 /* Build configuration list for PBXNativeTarget "DownloadCenter" */;
 			buildPhases = (
+				DCEA9019A2E97AA1FC5986EE /* [CP] Check Pods Manifest.lock */,
 				5C4AC31B20FDD7A80021F350 /* Sources */,
 				5C4AC31C20FDD7A80021F350 /* Frameworks */,
 				5C4AC31D20FDD7A80021F350 /* Resources */,
+				F0BDCC50A8DCAF5D45C0612B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +302,11 @@
 				TargetAttributes = {
 					5C4AC31E20FDD7A80021F350 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5C4AC33220FDD7AA0021F350 = {
 						CreatedOnToolsVersion = 9.3;
@@ -251,13 +365,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DCEA9019A2E97AA1FC5986EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DownloadCenter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0BDCC50A8DCAF5D45C0612B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DownloadCenter/Pods-DownloadCenter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DownloadCenter/Pods-DownloadCenter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C4AC31B20FDD7A80021F350 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9D14CF2106C54B007A46DC /* PersistanceTable.swift in Sources */,
+				5C9D14CE2106C54B007A46DC /* PersostanceProtocols.swift in Sources */,
+				5C4AC35420FDD8040021F350 /* HYDownloadVideoRecord.swift in Sources */,
 				5C4AC32520FDD7A80021F350 /* ViewController.swift in Sources */,
+				5C9D14D22106C686007A46DC /* HYVideoTable.swift in Sources */,
+				5C9D14CC2106C54B007A46DC /* FMDBDatabasePool.swift in Sources */,
+				5C4AC35620FDD80D0021F350 /* HYVideoDownloadManager.swift in Sources */,
+				5C9D14CD2106C54B007A46DC /* SQLGenerator.swift in Sources */,
 				5C4AC32320FDD7A80021F350 /* AppDelegate.swift in Sources */,
+				5C4AC35820FDD81A0021F350 /* HYVideoDownloadDataCenter.swift in Sources */,
+				5C4AC35A20FDDC890021F350 /* HYVideoDownloadNotificationAndEnumDefine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,17 +592,21 @@
 		};
 		5C4AC34820FDD7AA0021F350 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D74DABECA205DAA2D16A8AA /* Pods-DownloadCenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = APZXVAVRF6;
 				INFOPLIST_FILE = DownloadCenter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Hiveview-wanghaiyang.DownloadCenter";
+				PRODUCT_BUNDLE_IDENTIFIER = "Hiveview-wanghaiyang.DownLoadCenter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -446,17 +614,21 @@
 		};
 		5C4AC34920FDD7AA0021F350 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D118E47A60DA537088118A2 /* Pods-DownloadCenter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = APZXVAVRF6;
 				INFOPLIST_FILE = DownloadCenter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Hiveview-wanghaiyang.DownloadCenter";
+				PRODUCT_BUNDLE_IDENTIFIER = "Hiveview-wanghaiyang.DownLoadCenter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
