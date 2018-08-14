@@ -51,9 +51,9 @@ class ViewController: UIViewController {
     @objc func addDownloadNotification() {
         
         //指定下载路径
-        NotificationCenter.default.addObserver(self, selector: #selector(downloadProgress(noti:)), name: NSNotification.Name(rawValue: KHYDownloadManagerUserinfoKeyVideoDownloadProgressNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(downloadProgress(noti:)), name: .downloadProgress, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(downloadComplection(noti:)), name: NSNotification.Name(rawValue: KHYDownloadManagerVideoDidFinishDownloadNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(downloadComplection(noti:)), name: .finishedDownload, object: nil)
         
 
     }
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         let notiInfo = noti.userInfo
         videoListTab.backgroundColor = UIColor.yellow
     
-        let progress:Float = notiInfo![KHYDownloadManagerVideoDownloadProgressNotification] as! Float
+        let progress:Float = notiInfo![Notification.Name.downloadProgress.rawValue] as! Float
         videoDownloadProgress[0] = Double(progress)
         videoListTab.reloadData()
         
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     
     @objc func downloadComplection(noti:Notification)  {
         let notiInfo = noti.userInfo
-        let url:URL = notiInfo![KHYDownloadManagerUserinfoKeyNativeUrlNotification] as! URL
+        let url:URL = notiInfo![Notification.Name.nativeUrl.rawValue] as! URL
         print("下载完  ********* 、\(url)")
         videoDownloadProgress[0] = 1.0
         videoListTab.reloadData()
