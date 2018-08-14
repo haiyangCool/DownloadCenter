@@ -60,21 +60,22 @@ extension HYVideoDownloadManager {
         
         if videoStatus == .hyVideoStatusNative {
             /// if finish download then post notification
-            NotificationCenter.default.post(name: NSNotification.Name.init(KHYDownloadManagerVideoDidFinishDownloadNotification),
+            NotificationCenter.default.post(name: .finishedDownload,
                                             object: nil,
-                                            userInfo: [KHYDownloadManagerUserinfoKeyVideoDownloadProgressNotification :1.0,
-                                            KHYDownloadManagerUserinfoKeyNativeUrlNotification:url,
-                                            KHYDownloadManagerUserinfoKeyRemoteUrlNotification:url])
+                                            userInfo: [
+                                                Notification.Name.userDownloadProgress.rawValue :1.0,
+                                            Notification.Name.nativeUrl.rawValue:url,
+                                            Notification.Name.remoreUrl.rawValue:url])
         }
         
         if videoStatus == .hyVideoStatusDownloadFinished {
             let nativeUrl = self.videoDataCenter.nativeUrlWithRemoteUrl(url)
             if nativeUrl != nil {
-                NotificationCenter.default.post(name: NSNotification.Name.init(KHYDownloadManagerVideoDidFinishDownloadNotification),
+                NotificationCenter.default.post(name: .finishedDownload,
                                                 object: nil,
-                                                userInfo: [KHYDownloadManagerUserinfoKeyVideoDownloadProgressNotification:1.0,
-                                                KHYDownloadManagerUserinfoKeyRemoteUrlListNotification:url,
-                                                KHYDownloadManagerUserinfoKeyNativeUrlNotification:nativeUrl!])
+                                                userInfo: [Notification.Name.userDownloadProgress.rawValue:1.0,
+                                                Notification.Name.remoreUrlList.rawValue:url,
+                                                Notification.Name.nativeUrl.rawValue:nativeUrl!])
             }
             
         }
@@ -128,10 +129,10 @@ extension HYVideoDownloadManager {
         }
         
         videoDataCenter.deleteVideRecordWithRemoteUrl(url!)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: KHYDownloadManagerDidDeleteDownloadVideoNotification),
+        NotificationCenter.default.post(name: .deleteDownload,
                                         object: nil,
                                         userInfo: [
-                                            KHYDownloadManagerUserinfoKeyRemoteUrlNotification:url!
+                                            Notification.Name.remoreUrl.rawValue:url!
             ])
         
     }
@@ -175,11 +176,11 @@ extension HYVideoDownloadManager {
                     let resumeUrl = nativeUrl?.appendingPathExtension("resume")
                     try? resumeData?.write(to: resumeUrl!, options: Data.WritingOptions.atomic)
                     
-                    NotificationCenter.default.post(name: NSNotification.Name.init(KHYDownloadManagerVideoDidDownloadPausedNotification),
+                    NotificationCenter.default.post(name: .pausedDownload,
                                                     object: nil,
                                                     userInfo: [
-                                                        KHYDownloadManagerUserinfoKeyRemoteUrlNotification:url,
-                                                        KHYDownloadManagerUserinfoKeyVideoDownloadProgressNotification:Float((downloadTask?.progress.completedUnitCount)!)/Float((downloadTask?.progress.totalUnitCount)!)
+                                                        Notification.Name.remoreUrl.rawValue:url,
+                                                        Notification.Name.userDownloadProgress:Float((downloadTask?.progress.completedUnitCount)!)/Float((downloadTask?.progress.totalUnitCount)!)
                         ])
                 }
                  complication()
@@ -218,11 +219,12 @@ extension HYVideoDownloadManager {
                     let resumeUrl = nativeUrl?.appendingPathExtension("resume")
                     try? resumeData?.write(to: resumeUrl!, options: Data.WritingOptions.atomic)
                     
-                    NotificationCenter.default.post(name: NSNotification.Name.init(KHYDownloadManagerVideoDidDownloadPausedNotification),
+                    NotificationCenter.default.post(name: .pausedDownload,
                                                     object: nil,
                                                     userInfo: [
-                                                        KHYDownloadManagerUserinfoKeyRemoteUrlNotification:url,
-                                                        KHYDownloadManagerUserinfoKeyVideoDownloadProgressNotification:Float((downloadTask.progress.completedUnitCount))/Float((downloadTask.progress.totalUnitCount))
+                                                        Notification.Name.remoreUrl:url,
+                                                    
+                                                        Notification.Name.userDownloadProgress:Float((downloadTask.progress.completedUnitCount))/Float((downloadTask.progress.totalUnitCount))
                         ])
                 }
                 
@@ -266,13 +268,13 @@ extension HYVideoDownloadManager {
         dataTask.resume()
         downloadPool[url] = dataTask
         videoDataCenter.updateVideoStatus(.hyVideoStatusWaitingForDownload, remoteUrl: url)
-        NotificationCenter.default.post(name: NSNotification.Name.init(KHYDownloadManagerVideoWillDownloadNotification),
+        NotificationCenter.default.post(name: .willDownload,
                                         object: nil,
                                         userInfo: [
                 
-                                            KHYDownloadManagerUserinfoKeyRemoteUrlNotification:url,
+                                            Notification.Name.remoreUrl.rawValue:url,
                 
-                                            KHYDownloadManagerUserinfoKeyNativeUrlNotification:nativeUrl!
+                                            Notification.Name.nativeUrl.rawValue:nativeUrl!
             ])
         
      
@@ -300,10 +302,10 @@ extension HYVideoDownloadManager {
         downloadPool[url] = dataTask
         videoDataCenter.updateVideoStatus(.hyVideoStatusWaitingForDownload, remoteUrl: url)
         
-        NotificationCenter.default.post(name: NSNotification.Name.init(KHYDownloadManagerVideoWillDownloadNotification),
+        NotificationCenter.default.post(name: .willDownload,
                                         object: nil,
                                         userInfo: [
-                                            KHYDownloadManagerUserinfoKeyRemoteUrlNotification:url
+                                            Notification.Name.remoreUrl.rawValue:url
             ])
     }
     
@@ -313,7 +315,7 @@ extension HYVideoDownloadManager {
         downloadPool.removeValue(forKey: url)
         
         if error != nil || path == nil {
-            notification = KHYDownloadManagerVideoDownloadFaildNotification
+            notification = Notification.Name.downloadFaild.rawValue
             videoDataCenter.updateVideoStatus(.hyVideoStatusDownloadfaild, remoteUrl: url)
             let resumeData = response.resumeData
             if resumeData != nil {
@@ -322,11 +324,11 @@ extension HYVideoDownloadManager {
                 try? resumeData?.write(to: resumeUrl!, options: Data.WritingOptions.atomic)
             }
         }else {
-            notification = KHYDownloadManagerVideoDidFinishDownloadNotification
+            notification = Notification.Name.finishedDownload.rawValue
             videoDataCenter.updateVideoStatus(.hyVideoStatusDownloadFinished, remoteUrl: url)
         }
         
-        let userNotiInfo = [KHYDownloadManagerUserinfoKeyRemoteUrlNotification:url,KHYDownloadManagerUserinfoKeyNativeUrlNotification:path!]
+        let userNotiInfo = [Notification.Name.remoreUrl.rawValue:url,Notification.Name.nativeUrl.rawValue:path!]
         
         NotificationCenter.default.post(name: NSNotification.Name.init(notification!), object: nil, userInfo: userNotiInfo)
         
@@ -338,12 +340,13 @@ extension HYVideoDownloadManager {
         let progress = Float(downloadProgress.completedUnitCount)/Float(downloadProgress.totalUnitCount)
         if progress < 1.0 {
             let userNotiInfo = [
-                            KHYDownloadManagerUserinfoKeyNativeUrlNotification:nUrl!,
-                            KHYDownloadManagerUserinfoKeyRemoteUrlNotification:url,
-                            KHYDownloadManagerVideoDownloadProgressNotification:progress
-                ] as [String : Any]
+                
+                                Notification.Name.nativeUrl.rawValue:nUrl!,
+                                Notification.Name.remoreUrl:url,
+                            Notification.Name.downloadProgress.rawValue:progress
+                ] as! [String : Any]
             
-            NotificationCenter.default.post(name: NSNotification.Name.init(KHYDownloadManagerUserinfoKeyVideoDownloadProgressNotification),
+            NotificationCenter.default.post(name: .userDownloadProgress,
                                             object: nil,
                                             userInfo: userNotiInfo)
             videoDataCenter.updateVideoStatus(.hyVideoStatusDownloading, remoteUrl: url)
